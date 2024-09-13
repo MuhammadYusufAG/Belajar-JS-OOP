@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class MathUtil {
+            static sum (... numbers){
+                if (number.lenght === 0){
+                    throw new Error ('Total parameter harus lebih dari 0')
+                }
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        } 
+
+        const result = MathUtil.sum(1,1,1,1,1,1,11);
+        console.log(result);
+
+        //trigger error
+        console.info(MathUtil.sum());
+        console.info('eko');
+        
+    </script>
+</body>
+</html>

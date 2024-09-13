@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //membuat contrac  Counter Iterator result
+        class CounterIteratorResult{
+            constructor(value, done){
+                this.value = value;
+                this.done = done;
+            }
+        }
+
+        //membuat contrac Counter Iterator
+        class CounterIterator{
+            constructor(value, max){
+                this.value = value;
+                this.max = max;
+            }
+
+            //meng implementasikan
+            next(){//untuk mengembalikan CounterIteratorResult
+                try{//try finay buat naikin Counternya
+                    if(this.value > this.max){
+                        return new CounterIteratorResult(this.value, true);//kalo hasil nya max maka berhenti
+                    }else{
+                        return new CounterIteratorResult(this.value, false);//klo blum max makan akan false
+                    }
+                }
+                finally{
+                    this.value++;
+                }
+            }
+        }
+
+        //membuat contrac counter iterable
+        class CounterIterable{
+            constructor(value,max){
+                this.value = value;
+                this.max = max;
+            }
+
+            [Symbol.iterator]() {
+                return new CounterIterator(this.value, this.max);
+            }
+
+        }
+
+        //menggunakan counter iterable
+        const counterIterable = new CounterIterable (1,40);
+        for (const value of counterIterable) {
+            console.info(value);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Configuration {
+            //kalo tanpa static 3 ini jadi property Configuration
+            // name = 'Belajar JS OOP';
+            // version = 2.1;
+            // author = 'Muhammad Yusuf';
+
+            //kalo menggunakan static 3 ini bakal jadi prototype,contractor
+            //dan bisa kaya global
+            static name = 'Belajar JS OOP';
+            static version = 2.1;
+            static author = 'Muhammad Yusuf';
+        }
+
+        const config = new Configuration ();
+        console.info(config);
+
+        //mengubah isi static
+        Configuration.author = 'ucup ganteng';
+        
+        //manggil static
+        console.info(Configuration.name);
+        console.info(Configuration.version);
+        console.info(Configuration.author);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Employee{
+            sayHello(name){
+                console.info(`Hello ${name},My name is Emplyee${this.name}`);
+            }
+        }
+
+        class Manager extends Employee{
+            //kalo tidak memiliki sayHello tetap bisa
+            sayHello(name){
+                console.info(`Hello ${name},My name is Manager${this.name}`);
+            }
+        }
+
+        const eko =  new Employee();
+        eko.name = 'eko';
+        eko.sayHello('Joni');
+
+        const budi =  new Manager();
+        budi.name = 'budi';
+        budi.sayHello('Joni');
+
+        //liat obeject
+        console.log(eko);
+        console.log(budi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person {
+
+            say(name){
+                if (name){
+                    this.#sayWithName (name);
+                }
+                else{
+                    this.#sayWithoutName ();
+                }
+            }
+
+            #sayWithName(){
+                console.log(`Hello, my name is ${name}.`)
+            }
+
+            #sayWithoutName(){
+                console.log('Hello')
+            }
+        }
+
+        const ucup = new Person();
+        ucup.say('budi');
+
+        //klo maksa manggil yang menggunkan sharp/private akan ERROR
+        // ucup.#sayWithName();
+    </script>
+</body>
+</html>

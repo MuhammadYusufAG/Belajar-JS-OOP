@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this.name = name;
+                //ini nempel ke budi dan eko/intence object
+                // this.sayHello = function (name){
+                //     console.info(`Hello ${name},My Name is ${this.name}`);
+                // }
+            }
+            //kalo ini nempel langsung ke Person.property
+            sayHello(name){
+                console.info(`Hello ${name},My Name is ${this.name}`);
+            }
+        }
+
+        const eko = new Person('eko');
+        console.log(eko);
+        eko.sayHello('Joni')
+
+        const budi = new Person('budi');
+        console.log(budi);
+        budi.sayHello('Joni')
+    </script>
+</body>
+</html>

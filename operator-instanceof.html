@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee {
+
+        }
+
+        class Manager {//kalo ditambahin extends Employee maka
+                        //console.log(budi instanceof Employee);//true
+                        // console.log(budi instanceof Manager);//true
+
+        }
+
+        const budi = new Employee();
+        const ucup = new Manager();
+
+        //kalo menggunakan typeof
+        console.log(typeof budi); // output: object
+        console.log(typeof ucup); // output: object
+
+        //menggunakan intenceof
+
+        console.log(budi instanceof Employee);//true
+        console.log(budi instanceof Manager);//false
+
+        console.log(ucup instanceof Employee);//false
+        console.log(ucup instanceof Manager);//true
+
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class MathUtil {
+            static sum (... numbers){
+
+                if (numbers.length === 0){
+                    throw new Error ('Total parameter harus lebih dari 0')
+                }
+                let total = 0;
+                for (const number of numbers) {
+                    total += number;
+                }
+                return total;
+            }
+        } 
+
+        try {
+            //trigger error
+            console.info(MathUtil.sum(1,1,1));
+            console.info('eko');
+        }
+        //kalo di blok try tidak error maka blok catch tidak di jalankan
+        catch(error){
+            console.info(`Terjadi error : error ${error.message}`);
+        }
+        //error ga error tetep jalan
+        finally{
+            console.info('program selesai')
+        }
+        console.info('ucup')
+
+
+        //try finaly
+
+        class Counter {
+            #Counter =  1;
+            
+            next(){
+                
+                // return this.#Counter
+                // this.#Counter++;
+
+                //supaya tidak ke return
+                try {
+                    return this.#Counter
+                }finally{
+                    this.#Counter++;
+                }
+            }
+        }
+
+        const counter = new Counter();
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+    </script>
+</body>
+</html>

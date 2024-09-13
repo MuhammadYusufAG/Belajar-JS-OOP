@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object dengan object
+
+        // const eko = {
+        //     firstName: 'eko',
+        //     lastName: 'santoso'
+        // }
+        // const budi = {
+        //     firstName: 'budi',
+        //     lastName: 'santoso'
+        // }
+
+
+        //contructuring function
+        //huruf depan Besar
+        //bisa di isi parameter ()
+        function Person(firstName,lastName){
+            //property
+            this.firstName = firstName;
+            this.lastName = lastName;
+            //method
+            this.sayHello = function(name){
+                console.info(`Hello ${name}, My name is${this.firstName}`); 
+            }
+        }
+
+        //object contructuring
+        const eko = new Person();
+        //bisa gini
+        eko.firstName = 'eko';
+        eko.lastName = 'timur';
+        //tambahan dari method
+        eko.sayHello('kairi');
+
+        //kalo diisi parameter
+        const budi = new Person('budi','sincan');
+        budi.sayHello('limat')
+
+        //tidak seperti ini lagi
+        // const budi = {};
+
+        console.log(eko);
+        console.log(budi);
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //prototype incheritance yang salah
+        function Employee(){
+            this.name = name;
+        }
+        function Manager(){
+            this.name = name;
+        }
+
+         
+        // Manager.prototype = Employee.prototype;//salah
+        Manager.prototype = Object.create(Employee.prototype);
+
+        Employee.prototype.sayHello = function (name){
+            console.info(`Hello ${name}, My name is Employee ${this.name}`);
+        }
+        Manager.prototype.sayHello = function (name){
+            console.info(`Hello ${name}, My name is Manager ${this.name}`);
+        }
+
+        const employee = new Employee('eko');
+        employee.sayHello('agus');
+
+        const manager = new Manager('budi');
+        manager.sayHello('agus');
+
+        console.log(Employee); 
+        console.log(Manager);
+
+    </script>
+</body>
+</html>

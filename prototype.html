@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(firstName,lastName){
+            //property
+            this.firstName = firstName;
+            this.lastName = lastName;
+            //method
+            this.sayHello = function(name){
+                console.info(`Hello ${name}, My name is${this.firstName}`); 
+            }
+        }
+
+        //menambahkan property ke prototype
+        //-----inspect prototype
+        Person.prototype.sayBye = function(){
+            console.info(`Good Bye`);
+        }
+
+        Person.prototype.run = function(){
+            console.info(`${this.firstName} is Running`);
+        }
+
+
+        const budi = new Person('budi','sincan');
+        //instence object budi
+        // budi.sayBye = function(){
+        //     console.info('Bye Bye')
+        // }
+
+        const eko = new Person('eko','burak');
+
+        console.log(budi);
+        console.log(eko);
+
+        budi.sayBye();
+        budi.run()
+    </script>
+</body>
+</html>
